@@ -18,8 +18,11 @@ class xmldatetime:
         Z = "Z"
         format = "%Y-%m-%d" + T + "%H:%M:%S.%f"
         output = self.dt.strftime(format)[:-3] + Z
-        print(output)
         return  output
 
+    # needs to return an xmldatetime object
     def __sub__(self, other):
         return self.dt-other.dt
+    
+    def __add__(self, other):
+        return self.dt+other.dt
